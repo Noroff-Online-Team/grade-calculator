@@ -69,6 +69,8 @@ function setup() {
 
   form.value.value = 80;
   form.total.value = 100;
+  form.value.focus();
+  form.value.select();
 
   updateResult(calculate(80, 100));
 
