@@ -7,7 +7,8 @@
     "build": "sass src/scss:dist/css",
     "dev": "sass --watch src/scss:dist/css & live-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server"
+    "start": "live-server",
+    "lint": "eslint **/*.js"
   },
   "repository": {
     "type": "git",
