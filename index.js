@@ -13,13 +13,13 @@ function onInput(event) {
 
 function calculate(value = 0, total = 0) {
   if (total <= 0) {
-    throw new Error('Total must be greater than zero.');
+    throw new Error("Total must be greater than zero.");
   }
-  
+
   if (value < 0 || value > total) {
-    throw new Error('Value must be between 0 and the total.');
+    throw new Error("Value must be between 0 and the total.");
   }
-  
+
   // Calculate the percentage
   const percentage = value / total;
 
@@ -27,28 +27,28 @@ function calculate(value = 0, total = 0) {
   const boundaries = [
     {
       letter: "A",
-      min: 0.9
+      min: 0.9,
     },
     {
       letter: "B",
-      min: 0.8
+      min: 0.8,
     },
     {
       letter: "C",
-      min: 0.6
+      min: 0.6,
     },
     {
       letter: "D",
-      min: 0.5
+      min: 0.5,
     },
     {
       letter: "E",
-      min: 0.4
+      min: 0.4,
     },
     {
       letter: "F",
-      min: 0
-    }
+      min: 0,
+    },
   ];
 
   // Determine the letter grade
@@ -59,13 +59,13 @@ function calculate(value = 0, total = 0) {
   }
 
   // In case no boundary is met, return 'F' as default
-  return 'F';
+  return "F";
 }
 
 function setup() {
   const form = document.calculator;
 
-  if (!form) throw new Error('Form not found');
+  if (!form) throw new Error("Form not found");
 
   form.value.value = 80;
   form.total.value = 100;
@@ -74,7 +74,7 @@ function setup() {
 
   updateResult(calculate(80, 100));
 
-  form.addEventListener('input', onInput);
+  form.addEventListener("input", onInput);
 }
 
-setup()
+setup();
