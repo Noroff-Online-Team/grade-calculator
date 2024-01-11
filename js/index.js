@@ -1,3 +1,4 @@
+import "bootstrap/dist/js/bootstrap.bundle.js";
 import { calculate } from "./calculate.js";
 import { updateResult } from "./update.js";
 import { onInput } from "./onInput.js";
