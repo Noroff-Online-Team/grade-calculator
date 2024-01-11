@@ -1,17 +1,4 @@
-function updateResult(grade) {
-  const resultElement = document.querySelector(".grade");
-  resultElement.textContent = grade;
-}
-
-function onInput(event) {
-  const form = event.target.form;
-  const value = Number(form.value.value);
-  const total = Number(form.total.value);
-  const grade = calculate(value, total);
-  updateResult(grade);
-}
-
-function calculate(value = 0, total = 0) {
+export function calculate(value = 0, total = 0) {
   if (total <= 0) {
     throw new Error("Total must be greater than zero.");
   }
@@ -61,20 +48,3 @@ function calculate(value = 0, total = 0) {
   // In case no boundary is met, return 'F' as default
   return "F";
 }
-
-function setup() {
-  const form = document.calculator;
-
-  if (!form) throw new Error("Form not found");
-
-  form.value.value = 80;
-  form.total.value = 100;
-  form.value.focus();
-  form.value.select();
-
-  updateResult(calculate(80, 100));
-
-  form.addEventListener("input", onInput);
-}
-
-setup();
