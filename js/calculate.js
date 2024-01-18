@@ -1,10 +1,20 @@
+import {
+  totalAboveZeroError,
+  valueAndTotalTypeStringError,
+  valueBetweenZeroAndTotalError,
+} from "./errors.js";
+
 export function calculate(value = 0, total = 0) {
   if (total <= 0) {
-    throw new Error("Total must be greater than zero.");
+    throw totalAboveZeroError;
   }
 
   if (value < 0 || value > total) {
-    throw new Error("Value must be between 0 and the total.");
+    throw valueBetweenZeroAndTotalError;
+  }
+
+  if (typeof value !== "number" || typeof total !== "number") {
+    throw valueAndTotalTypeStringError;
   }
 
   // Calculate the percentage
